@@ -1,2 +1,2 @@
-# newcos
-Approximating the cosine function using Taylor Series and the Modulo operator
+# Taylor Series using Python
+Approximating different well-known functions using Taylor Series
