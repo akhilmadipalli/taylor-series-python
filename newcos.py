@@ -1,18 +1,18 @@
 import math
 
-def newcos(angle):
+def newcos(angle): #angle param, user selects what angle they would like to approximate cosine for
 
-    angle = math.fmod(angle + math.pi, 2*math.pi) - math.pi
+    angle %= 2*math.pi #as a means to counter large values out of taylor series window of accuracy, use mod functions to find cos of complementary angles
     
-    result = 0
+    result = 0 #initialize result value
     
-    sign = 1
+    sign = 1 #cos taylor series polynomial start with positive number
     
-    power = 0
+    power = 0 
     
     for i in range(15):
     
-        result += (math.pow(angle, power) / math.factorial(power)) * sign
+        result += (angle**power) / math.factorial(power)) * sign
         
         sign *= -1
         
@@ -21,5 +21,7 @@ def newcos(angle):
     return result
 
 a = float(input("Enter an angle: "))
+
 print(math.cos(a))
+
 print(newcos(a))
